@@ -8,16 +8,30 @@
 <script type="text/javascript">
 function poschitat(){
 var marka_tovara=1;
-alert(document.forms[0].marka[2].checked)
-if (document.forms[0].marka[0].checked==true){
-marka_tovara=0;}
-if (document.forms[0].marka[1].checked==true){
-marka_tovara=1;}
-if (document.forms[0].marka[2].checked==true){
-marka_tovara=2;}
-if (document.forms[0].marka[3].checked==true){
-marka_tovara=3;}
-alert(marka_tovara)
+if (document.forms[0].marka[0].checked==true)
+ {
+ marka_tovara=0;
+ price=100;
+ }
+if (document.forms[0].marka[1].checked==true)
+{
+marka_tovara=1;
+price=200;
+}
+if (document.forms[0].marka[2].checked==true)
+{
+marka_tovara=2;
+price=300;
+}
+if (document.forms[0].marka[3].checked==true)
+{
+marka_tovara=3;
+price=400;
+}
+
+var text="Ціна замовлення="+price;
+var price = document.body.getElementsByClassName("price")[0];
+price.innerHTML=text;
 }
 </script>
 <p>
@@ -47,7 +61,7 @@ alert(marka_tovara)
 <input type="button" value="Замовити">
 <H3>Залишіть свій відгук</H3>
 <textarea name="vidguk" cols="25" rows="3"> </textarea>
-<input type="text" id="123">
+<div class="price">Ціна замовлення</div>
 </form>
 </body>
 </html>
